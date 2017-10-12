@@ -1,5 +1,5 @@
 <resources>
-<string name="app_name">Lab1</string>
+<string name="app_name">Lab2</string>
 <string name="titles">中山大学学生信息系统</string>
 <string name="user_name_hit">请输入学号</string>
 <string name="password_hit">请输入密码</string>
