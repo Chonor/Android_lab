@@ -36,28 +36,29 @@ import java.io.InputStream;
 import org.w3c.dom.Text;
 
 import java.io.InputStream;
+import java.util.Timer;
+import java.util.TimerTask;
 
 
 public class MainActivity extends AppCompatActivity {
     private static final int CAMERA = 1;
     private static final int IMAGE = 2;
-    String rb_string="学生";  //初始化为默认选项学生
-    String rb_string_hit="学号";
+    private String rb_string="学生";  //初始化为默认选项学生
+    private String rb_string_hit="学号";
     int height=0;
     int width=0;
-    ImageView mImage=null;
-    Button button_login=null;
-    Button button_init=null;
-    RadioGroup mRB=null;
-    RadioButton rb_student=null;
-    RadioButton rb_teacher=null;
-    EditText et_id=null;
-    EditText et_password=null;
-    TextInputLayout til_id =null;
-    TextInputLayout til_password=null;
-    AlertDialog.Builder builder=null;
-    LayoutParams para = null;
-
+    private ImageView mImage=null;
+    private Button button_login=null;
+    private Button button_init=null;
+    private RadioGroup mRB=null;
+    private RadioButton rb_student=null;
+    private RadioButton rb_teacher=null;
+    private EditText et_id=null;
+    private EditText et_password=null;
+    private TextInputLayout til_id =null;
+    private TextInputLayout til_password=null;
+    private AlertDialog.Builder builder=null;
+    private LayoutParams para = null;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -203,6 +204,16 @@ public class MainActivity extends AppCompatActivity {
                             })
                             .setActionTextColor(getResources().getColor(R.color.colorPrimary))
                             .show();
+                    if(rb_string.equals("学生")){
+                        Timer timer = new Timer();
+                        timer.schedule(new TimerTask(){
+                            @Override
+                            public void run() {
+                                Intent i = new Intent(MainActivity.this ,AfterLogin.class);
+                                startActivity(i);
+                            }
+                        },2000);//延时2s执行
+                    }
                 }
                 else if(et_id.getText().toString().length()!=0 && et_password.getText().toString().length()!=0) { //输入不正确
                     Snackbar.make(button_init, rb_string_hit+"或密码错误", Snackbar.LENGTH_SHORT)
