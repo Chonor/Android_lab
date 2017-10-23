@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.List;
@@ -19,12 +20,13 @@ public class CommonAdapter extends RecyclerView.Adapter<CommonAdapter.ViewHolder
     private Context mContext;
     private List<Good> mDatas;
     private int mLayoutId;
-
+    private boolean flag;
     //构造函数
-    public CommonAdapter(Context mContext,int mLayoutId,List<Good>mDatas) {
+    public CommonAdapter(Context mContext,int mLayoutId,List<Good>mDatas,boolean flag) {
         this.mLayoutId=mLayoutId;
         this.mContext = mContext;
         this.mDatas = mDatas;
+        this.flag=flag;
     }
     @Override
     public ViewHolder onCreateViewHolder(final ViewGroup viewGroup,int viewType) {
@@ -52,10 +54,27 @@ public class CommonAdapter extends RecyclerView.Adapter<CommonAdapter.ViewHolder
         }
     }
     public void convert(ViewHolder viewHolder, Good good){
-        TextView first=viewHolder.getView(R.id.first);
-        first.setText(good.getGoodName_First());
-        TextView name=viewHolder.getView(R.id.name);
-        name.setText(good.getGoodName());
+        if(flag) {
+            TextView first = viewHolder.getView(R.id.first);
+            first.setText(good.getGoodName_First());
+            TextView name = viewHolder.getView(R.id.name);
+            name.setText(good.getGoodName());
+        }else{
+            ImageView imageView = viewHolder.getView(R.id.image2);
+            String names=good.getGoodName();
+            if(names.equals("Enchated Forest"))imageView.setImageResource(R.mipmap.enchatedforest);
+            else if(names.equals("Arla Milk"))imageView.setImageResource(R.mipmap.arla);
+            else if(names.equals("Devondale Milk"))imageView.setImageResource(R.mipmap.devondale);
+            else if(names.equals("Kindle Oasis"))imageView.setImageResource(R.mipmap.kindle);
+            else if(names.equals("waitrose 早餐麦片"))imageView.setImageResource(R.mipmap.waitrose);
+            else if(names.equals("Mcvitie's 饼干"))imageView.setImageResource(R.mipmap.mcvitie);
+            else if(names.equals("Ferrero Rocher"))imageView.setImageResource(R.mipmap.ferrero);
+            else if(names.equals("Maltesers"))imageView.setImageResource(R.mipmap.maltesers);
+            else if(names.equals("Lindt"))imageView.setImageResource(R.mipmap.lindt);
+            else if(names.equals("Borggreve"))imageView.setImageResource(R.mipmap.borggreve);
+            TextView name = viewHolder.getView(R.id.name2);
+            name.setText(names);
+        }
     }
 
     //获取数据的数量

@@ -16,6 +16,7 @@ public class Data  {
     private String Price[]={"¥ 5.00","¥ 59.00","¥ 79.00","¥ 2399.00","¥ 179.00","¥ 14.90","¥ 132.59","¥ 141.43","¥ 139.43","¥ 28.90"};
     private String Info[]={"Johanna Basford","德国","澳大利亚","8GB","2Kg","英国","300g","118g","249g","640g"};
     private String Types[]={"作者","产地","产地","版本","重量","产地","重量","重量","重量","重量"};
+    private double Prices[]={5.00,59.00,79.00,2399.00,179.00,14.90,132.59,141.43,139.43,28.90};
     private ArrayList<Good> good_list=null;
     private ArrayList<Good> cart_list=null;
 
@@ -32,6 +33,7 @@ public class Data  {
             good.setGoodPrice(Price[i]);
             good.setGoodInfo(Info[i]);
             good.setGoodTypes(Types[i]);
+            good.setGoodPrices(Prices[i]);
             good_list.add(good);
         }
     }

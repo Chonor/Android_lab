@@ -7,9 +7,11 @@ import android.support.design.widget.FloatingActionButton;
 import android.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -25,6 +27,10 @@ public class MainActivity extends AppCompatActivity {
     private RecyclerView mRecyclerView = null;
     private CommonAdapter commonAdapter;
     private ScaleInAnimationAdapter animationAdapter;
+    private Button button;
+    private Boolean flag;
+
+    protected RecyclerView.LayoutManager mLayoutManager;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,28 +51,55 @@ public class MainActivity extends AppCompatActivity {
             mRecyclerView.removeAllViews();
             data.setGood_list(tmp);
             data.setCart_list(tmp1);
-            init();
-            init_listener();
+            change();
         }
     }
 
-    private void init(){
+    private void init() {
+        flag=true;
+        button = (Button) findViewById(R.id.button);
         floatingActionButton = (FloatingActionButton) findViewById(R.id.floatingActionButton); //初始化按钮
-        mRecyclerView = (RecyclerView)findViewById(R.id.myRecyclerView); //初始化RecyclerView
+        mRecyclerView = (RecyclerView) findViewById(R.id.myRecyclerView); //初始化RecyclerView
 
-        mRecyclerView.setLayoutManager(new LinearLayoutManager(this));//这里用线性显示
-        mRecyclerView.setHasFixedSize(true);
-        //初始化适配
-        //mRecyclerView.setAdapter(commonAdapter);
-        commonAdapter = new CommonAdapter(MainActivity.this,R.layout.items,data.getGood_list());
-        animationAdapter=new ScaleInAnimationAdapter(commonAdapter);
+        mLayoutManager = new LinearLayoutManager(this);
+        mRecyclerView.setLayoutManager(mLayoutManager);
+
+        commonAdapter = new CommonAdapter(MainActivity.this, R.layout.items, data.getGood_list(), flag);
+        animationAdapter = new ScaleInAnimationAdapter(commonAdapter);
 
         animationAdapter.setDuration(1000); //设置开始动画
         mRecyclerView.setAdapter(animationAdapter);//填充数据
         mRecyclerView.setItemAnimator(new OvershootInLeftAnimator());
         mRecyclerView.getItemAnimator().setRemoveDuration(300); //设置移除延时
+
     }
     private void init_listener(){
+        Adapter_listener();
+        floatingActionButton.setOnClickListener(new View.OnClickListener() {
+            @Override //跳转至 购物车界面
+            public void onClick(View view) {
+                Intent i = new Intent(MainActivity.this, Shoppingcart.class);
+                Bundle bundle = new Bundle();//传输数据
+                bundle.putParcelableArrayList("data",data.getGood_list());
+                bundle.putParcelableArrayList("cart",data.getCart_list());
+                i.putExtra("mainActivity",bundle);
+                startActivityForResult(i,1);
+            }
+        });
+
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(flag){
+                    flag=false;
+                }else{
+                    flag=true;
+                }
+                change();
+            }
+        });
+    }
+    private void Adapter_listener(){
         commonAdapter.setOnItemClickListener(new CommonAdapter.OnItemClickListener(){
             @Override
             public void onClick(int position){
@@ -90,17 +123,25 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
-
-        floatingActionButton.setOnClickListener(new View.OnClickListener() {
-            @Override //跳转至 购物车界面
-            public void onClick(View view) {
-                Intent i = new Intent(MainActivity.this, Shoppingcart.class);
-                Bundle bundle = new Bundle();//传输数据
-                bundle.putParcelableArrayList("data",data.getGood_list());
-                bundle.putParcelableArrayList("cart",data.getCart_list());
-                i.putExtra("mainActivity",bundle);
-                startActivityForResult(i,1);
-            }
-        });
+    }
+    private void change(){
+        int scrollPosition = 0;
+        // If a layout manager has already been set, get current scroll position.
+        if (mRecyclerView.getLayoutManager() != null) {
+            scrollPosition = ((LinearLayoutManager) mRecyclerView.getLayoutManager())
+                    .findFirstCompletelyVisibleItemPosition();
+        }//布局切换
+        if(flag) {
+            mLayoutManager = new LinearLayoutManager(this);
+            commonAdapter = new CommonAdapter(MainActivity.this, R.layout.items, data.getGood_list(), flag);
+        }else{
+            mLayoutManager = new GridLayoutManager(this, 2);
+            commonAdapter = new CommonAdapter(MainActivity.this, R.layout.item2, data.getGood_list(), flag);
+        }
+        mRecyclerView.setLayoutManager(mLayoutManager);
+        animationAdapter = new ScaleInAnimationAdapter(commonAdapter);
+        mRecyclerView.setAdapter(animationAdapter);//填充数据
+        Adapter_listener();//建立监听
+        mRecyclerView.scrollToPosition(scrollPosition);
     }
 }

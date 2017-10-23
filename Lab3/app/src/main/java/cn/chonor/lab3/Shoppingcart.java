@@ -9,6 +9,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -23,14 +24,14 @@ public class Shoppingcart extends AppCompatActivity {
     private FloatingActionButton floatingActionButton = null;
     private AlertDialog.Builder builder = null;
     private MyAdapter myAdapter;
-
+    private TextView all;
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.shopping);
+        all=(TextView)findViewById(R.id.all);
         get_set_data();//接收数据
         init();//初始化
         init_listener();//事件监听
-
     }
 
     @Override
@@ -60,8 +61,15 @@ public class Shoppingcart extends AppCompatActivity {
             good.setGoodFisrt("*");
             data.addCart_list(0, good);
         }
+        double sum=0;
+        for(int i=1;i<data.getCart_list().size();i++){
+            sum+= data.getCart_list_index(i).getCnt()* data.getCart_list_index(i).getPrices();
+        }
+
+        all.setText("总价：￥ "+ String.valueOf(sum));
     }
     private void init(){//初始化
+
         builder = new AlertDialog.Builder(this);
         listView = (ListView) this.findViewById(R.id.myListView);
         myAdapter = new MyAdapter(this, data.getCart_list(), 0);
@@ -104,6 +112,12 @@ public class Shoppingcart extends AppCompatActivity {
                     alertdialog_build(i);
                     AlertDialog dialog = builder.create(); //完成创建AlertDialog并显示
                     dialog.show();
+                    double sum=0;
+                    for(int j=1;j<data.getCart_list().size();j++){
+                        sum+= data.getCart_list_index(j).getCnt()* data.getCart_list_index(j).getPrices();
+                    }
+
+                    all.setText("总价：￥ "+ String.valueOf(sum));
                 }
                 return true;
             }

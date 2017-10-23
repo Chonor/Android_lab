@@ -15,6 +15,7 @@ public class Good  implements Parcelable{
     private String first;
     private int cnt;
     private int star;
+    private double prices;
     public Good(){}
     public Good(String name,String  price,String info,String types){ //初始化
         setGoodName(name);
@@ -41,6 +42,7 @@ public class Good  implements Parcelable{
     public void setGoodTypes(String types){
         this.types=types;
     }
+    public void setGoodPrices(double prices){this.prices=prices;}
     //设置商品收藏
     public void setStar(){
         if(star == 1)star=0;
@@ -66,11 +68,12 @@ public class Good  implements Parcelable{
     }
     public int getCnt(){return cnt;}
     public int getStar(){return star;}
+    public double getPrices(){return prices;}
 
     //Parcelable类重载
     @Override
     public int describeContents() {
-        return 7;
+        return 8;
     }
     @Override
     public void writeToParcel(Parcel parcel, int flags) {
@@ -81,6 +84,7 @@ public class Good  implements Parcelable{
         parcel.writeString(first);
         parcel.writeInt(cnt);
         parcel.writeInt(star);
+        parcel.writeDouble(prices);
     }
     public static final Parcelable.Creator<Good> CREATOR =new Parcelable.Creator<Good>() {
         @Override
@@ -93,6 +97,7 @@ public class Good  implements Parcelable{
             good.first=source.readString();
             good.cnt=source.readInt();
             good.star=source.readInt();
+            good.prices=source.readDouble();
             return good;
         }
         @Override

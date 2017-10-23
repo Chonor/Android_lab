@@ -1,2 +1,2 @@
 # Android_lab
-SYSU SDCS Android lab
+Android lab rope & code
