@@ -217,7 +217,7 @@ public class Good_Info extends AppCompatActivity {
                 //实例化NotificationCompat.Builde并设置相关属性
                 Notification.Builder builder = new Notification.Builder(context)
                         //设置小图标
-                        .setSmallIcon(data.ID[id])
+                        .setSmallIcon(data.ID[data.map.get(names)])
                         .setLargeIcon(BitmapFactory.decodeResource(context.getResources(),data.ID[data.map.get(names)]))
                         //设置通知标题
                         .setTicker("TickerText:" + "您有新短消息，请注意查收！")
@@ -228,9 +228,8 @@ public class Good_Info extends AppCompatActivity {
                         .setAutoCancel(true)
                         .setDefaults(Notification.DEFAULT_SOUND | Notification.DEFAULT_VIBRATE)
                         .setWhen(System.currentTimeMillis())
-                        .setPriority(Notification.PRIORITY_HIGH)
-                        .setVisibility(Notification.VISIBILITY_SECRET);
-                notifyManager.notify(0, builder.build());
+                        .setPriority(Notification.PRIORITY_HIGH);
+                notifyManager.notify(1, builder.build());
             }
         }
     }

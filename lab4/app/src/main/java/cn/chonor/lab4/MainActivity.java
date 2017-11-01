@@ -20,6 +20,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.Button;
+import android.widget.RemoteViews;
 import android.widget.Toast;
 
 import org.greenrobot.eventbus.EventBus;
@@ -200,6 +201,11 @@ public class MainActivity extends AppCompatActivity {
                 PendingIntent pi = PendingIntent.getActivities(context, 0, new Intent[]{intent1}, PendingIntent.FLAG_CANCEL_CURRENT);
 
                 //实例化NotificationCompat.Builde并设置相关属性
+                Notification.InboxStyle inboxStyle = new Notification.InboxStyle()
+                        .setBigContentTitle("新商品热卖")
+                        .addLine(name+"仅售"+price+"!")
+                        .addLine(data.getGood_list_index(id).getGoodTypes() + " " + data.getGood_list_index(id).getGoodInfo());
+
                 Notification.Builder builder = new Notification.Builder(context)
                         //设置小图标
                         .setSmallIcon(data.ID[id])
@@ -209,12 +215,14 @@ public class MainActivity extends AppCompatActivity {
                         .setContentTitle("新商品热卖")
                         //设置通知内容
                         .setContentText(name+"仅售"+price+"!")
+                        .setStyle(inboxStyle)
                         .setContentIntent(pi)
                         .setAutoCancel(true)
                         .setDefaults(Notification.DEFAULT_SOUND | Notification.DEFAULT_VIBRATE)
                         .setWhen(System.currentTimeMillis())
-                        .setPriority(Notification.PRIORITY_HIGH)
-                        .setVisibility(Notification.VISIBILITY_SECRET);
+                        .setPriority(Notification.PRIORITY_HIGH);
+                //.setStyle(new Notification.BigPictureStyle().bigLargeIcon(bm).setBigContentTitle(name+"仅售"+price+"!").setSummaryText(data.getCart_list_index(id).getGoodTypes() + " " + data.getCart_list_index(id).getGoodInfo()));
+
                 notifyManager.notify(0, builder.build());
             }
         }
