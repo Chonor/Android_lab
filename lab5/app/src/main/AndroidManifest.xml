@@ -37,7 +37,7 @@
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
                 <action android:name="cn.chonor.lab5.staticreceiver" />
-                <action android:name="cn.chonor.lab5.dynamicreceiver" />
+
             </intent-filter>
 
             <meta-data

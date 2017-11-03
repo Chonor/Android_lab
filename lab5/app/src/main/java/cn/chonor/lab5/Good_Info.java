@@ -61,6 +61,7 @@ public class Good_Info extends AppCompatActivity {
     private void broad_init(){
         dynamic_filter.addAction(DYNAMICATION);
         registerReceiver(dynamicReceiver,dynamic_filter);
+
     }
     private void init(){ //初始化
         String []hits ={"一键下单","分享商品","不感兴趣","查看更多商品促销信息"};
@@ -214,7 +215,8 @@ public class Good_Info extends AppCompatActivity {
                 NotificationManager notifyManager = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
 
                 Intent intent1 =new Intent (context,Shoppingcart.class);//点击事件和传输
-                PendingIntent pi = PendingIntent.getActivities(context, 0, new Intent[]{intent1}, PendingIntent.FLAG_CANCEL_CURRENT);
+                PendingIntent pi = PendingIntent.getActivity(context, 0, intent1, PendingIntent.FLAG_CANCEL_CURRENT);
+                NewAppWidget.upDataDynamic(context,pi,names);
                 //实例化NotificationCompat.Builde并设置相关属性
                 Notification.Builder builder = new Notification.Builder(context)
                         //设置小图标
