@@ -1,6 +1,7 @@
 package cn.chonor.lab5;
 
 import android.app.AlertDialog;
+import android.app.PendingIntent;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
@@ -34,7 +35,13 @@ public class Shoppingcart extends AppCompatActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.shopping);
-        init();//初始化
+        if(savedInstanceState != null) {
+            ArrayList<Good>tmp=savedInstanceState.getParcelableArrayList("good");
+            ArrayList<Good>tmp1=savedInstanceState.getParcelableArrayList("cart");
+            data.setGood_list(tmp);
+            data.setCart_list(tmp1);
+        }
+            init();//初始化
         get_set_data();//接收数据
         init_listener();//事件监听
         EventBus.getDefault().register(this);
@@ -128,6 +135,11 @@ public class Shoppingcart extends AppCompatActivity {
                 data.removeCart_list_index(position);
                 myAdapter.notifyDataSetChanged();
                 Toast.makeText(getApplicationContext(), "成功删除 " + tmp, Toast.LENGTH_SHORT).show();
+                if(data.getCart_list().size()==0) {//购物车为空
+                    Intent intent1 = new Intent(Shoppingcart.this, MainActivity.class);//点击事件和传输
+                    PendingIntent pi = PendingIntent.getActivity(Shoppingcart.this, 0, intent1, PendingIntent.FLAG_CANCEL_CURRENT);
+                    NewAppWidget.upDataDynamic(Shoppingcart.this, pi, "");
+                }
                 double sum=0;
                 for(int j=1;j<data.getCart_list().size();j++){
                     sum+= data.getCart_list_index(j).getCnt()* data.getCart_list_index(j).getPrices();
@@ -159,5 +171,15 @@ public class Shoppingcart extends AppCompatActivity {
         //取消注册事件
         EventBus.getDefault().unregister(this);
     }
+    @Override
+    protected void onRestoreInstanceState(Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+    }
 
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putParcelableArrayList("good",data.getGood_list());
+        outState.putParcelableArrayList("cart",data.getCart_list());
+    }
 }
