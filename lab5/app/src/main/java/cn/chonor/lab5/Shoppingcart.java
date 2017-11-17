@@ -135,7 +135,7 @@ public class Shoppingcart extends AppCompatActivity {
                 data.removeCart_list_index(position);
                 myAdapter.notifyDataSetChanged();
                 Toast.makeText(getApplicationContext(), "成功删除 " + tmp, Toast.LENGTH_SHORT).show();
-                if(data.getCart_list().size()==0) {//购物车为空
+                if(data.getCart_list().size()==0||(data.getCart_list().size()==1&&data.getCart_list_index(0).getGoodName().equals("购物车"))) {//购物车为空
                     Intent intent1 = new Intent(Shoppingcart.this, MainActivity.class);//点击事件和传输
                     PendingIntent pi = PendingIntent.getActivity(Shoppingcart.this, 0, intent1, PendingIntent.FLAG_CANCEL_CURRENT);
                     NewAppWidget.upDataDynamic(Shoppingcart.this, pi, "");
