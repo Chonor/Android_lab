@@ -8,6 +8,7 @@
     tools:context="cn.chonor.lab2.MainActivity"
     android:focusable="true"
     android:focusableInTouchMode="true"
+
     >
 
     <TextView

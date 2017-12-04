@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/birth_dead">
+    <EditText
+        android:id="@+id/alertdialog_birth"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:numeric="integer"
+        android:hint="出生年份"/>
+
+    <EditText
+        android:id="@+id/alertdialog_dead"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/alertdialog_birth"
+        android:hint="死亡年份"
+        android:inputType="number"
+        android:numeric="integer"
+        />
+</RelativeLayout>
