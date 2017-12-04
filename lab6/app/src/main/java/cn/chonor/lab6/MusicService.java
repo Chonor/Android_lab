@@ -102,6 +102,9 @@ public class MusicService extends Service {
             }
         }
 
+        /**
+         * 歌曲库初始化，默认先使用第一首歌曲
+         */
         public void Music_init() {
             scanAllAudioFiles();
             try {

@@ -164,11 +164,13 @@ public class MainActivity extends AppCompatActivity {
                     int len=reply.readInt();//返回时长
                     seekBar.setMax(len); // 设置最大时长
                     end.setText(time.format(len));//设置时间
-                    reply.readStringList(Music_name);
+                    reply.readStringList(Music_name);//读取回传的歌曲信息
                     reply.readStringList(Music_id);
                     reply.readStringList(Music_albumid);
+                    //通过函数获取歌曲封面图片
                     Bitmap bm = getArtwork(MainActivity.this, Integer.valueOf(Music_id.get(0)),Integer.valueOf(Music_albumid.get(0)),true);
-                    if(bm!=null)imageView1.setImageBitmap(bm);
+                    if(bm!=null)imageView1.setImageBitmap(bm);//没有图片设置为空
+                    //填充listview
                     listView.setAdapter(new ArrayAdapter<String>(MainActivity.this, android.R.layout.simple_expandable_list_item_1,Music_name));
                 }catch (Exception e) {
                     e.printStackTrace();
