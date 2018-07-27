@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".info.Edit_information">
+
+    <!--头像-->
+    <cn.chonor.final_pro.info.CircleImageView
+        android:id="@+id/edit_img"
+        android:layout_marginLeft="143dp"
+        android:layout_marginTop="15dp"
+        android:clickable="true"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@mipmap/demo_name"
+        app:border_width="2dp"
+        android:background="#FFFFFF" />
+
+    <!--信息-->
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
+        app:counterEnabled="true"
+        app:counterMaxLength="8"
+        app:counterOverflowTextAppearance="@style/ErrorStyle">
+
+        <EditText
+            android:id="@+id/edit_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="修改昵称"
+            android:maxLines="1"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp" />
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
+        app:counterEnabled="true"
+        app:counterMaxLength="8"
+        app:counterOverflowTextAppearance="@style/ErrorStyle">
+
+        <EditText
+            android:id="@+id/edit_department"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="修改院系"
+            android:maxLines="1"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp" />
+    </android.support.design.widget.TextInputLayout>
+
+    <RadioGroup
+        android:id="@+id/edit_sex"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:paddingLeft="10dp"
+            android:paddingTop="5dp"
+            android:text="性别"
+            android:textSize="18dp" />
+
+        <android.support.v7.widget.AppCompatRadioButton
+            android:id="@+id/edit_male"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="男"
+            android:textSize="17sp" />
+
+        <android.support.v7.widget.AppCompatRadioButton
+            android:id="@+id/edit_female"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="女"
+            android:textSize="17sp" />
+
+        <android.support.v7.widget.AppCompatRadioButton
+            android:id="@+id/edit_secret"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="保密"
+            android:textSize="17sp" />
+    </RadioGroup>
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="118dp"
+        android:layout_marginTop="3dp"
+        app:counterEnabled="true"
+        app:counterMaxLength="120"
+        app:counterOverflowTextAppearance="@style/ErrorStyle">
+
+        <EditText
+            android:id="@+id/edit_introduction"
+            android:layout_width="match_parent"
+            android:layout_height="118dp"
+            android:gravity="start"
+            android:hint="个人简介"
+            android:maxLines="8"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp" />
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.v7.widget.AppCompatButton
+        android:id="@+id/edit_save"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:background="@color/colorPrimary"
+        android:text="保存"
+        android:textColor="@android:color/white"
+        android:textSize="20sp" />
+
+
+</LinearLayout>

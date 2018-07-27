@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".login_register.RegisterActivity">
+<!--页面可滑动-->
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="10dp"
+    >
+<!--头像 com.example.jy.project_final.CircleImageView-->
+    <cn.chonor.final_pro.info.CircleImageView
+        android:layout_marginTop="15dp"
+        android:id="@+id/register_img"
+        android:layout_marginLeft="143dp"
+        android:clickable="true"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@mipmap/demo_name"
+        app:border_width="2dp"
+        android:background="#FFFFFF" />
+
+
+<!--信息-->
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        app:counterEnabled="true"
+        app:counterMaxLength="4"
+        app:counterOverflowTextAppearance="@style/ErrorStyle">
+
+        <EditText
+            android:id="@+id/register_real_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="真实姓名"
+            android:maxLines="1"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp" />
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
+        app:counterEnabled="true"
+        app:counterMaxLength="8"
+        app:counterOverflowTextAppearance="@style/ErrorStyle">
+
+        <EditText
+            android:id="@+id/register_sid"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="学号"
+            android:maxLines="1"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp" />
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:counterEnabled="true"
+        app:counterMaxLength="8"
+        app:counterOverflowTextAppearance="@style/ErrorStyle">
+
+        <EditText
+            android:id="@+id/register_department"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="院系"
+            android:maxLines="1"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp" />
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:counterEnabled="true"
+        app:counterMaxLength="8"
+        app:counterOverflowTextAppearance="@style/ErrorStyle">
+
+        <EditText
+            android:id="@+id/register_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="昵称"
+            android:maxLines="1"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp" />
+    </android.support.design.widget.TextInputLayout>
+
+    <RadioGroup
+        android:id="@+id/register_sex"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:paddingLeft="10dp"
+            android:paddingTop="5dp"
+            android:text="性别"
+            android:textSize="18dp" />
+
+        <android.support.v7.widget.AppCompatRadioButton
+            android:id="@+id/register_male"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="男"
+            android:textSize="17sp" />
+
+        <android.support.v7.widget.AppCompatRadioButton
+            android:id="@+id/register_female"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="女"
+            android:textSize="17sp" />
+    </RadioGroup>
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:counterEnabled="true"
+        app:counterMaxLength="12"
+        app:counterOverflowTextAppearance="@style/ErrorStyle"
+        android:layout_marginTop="5dp">
+
+        <EditText
+            android:id="@+id/register_first_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="设置密码"
+            android:inputType="textPassword"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:maxLines="1" />
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:counterEnabled="true"
+        app:counterMaxLength="12"
+        app:counterOverflowTextAppearance="@style/ErrorStyle"
+        >
+
+        <EditText
+            android:id="@+id/register_second_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="确认密码"
+            android:inputType="textPassword"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:maxLines="1" />
+    </android.support.design.widget.TextInputLayout>
+
+
+    <RadioGroup
+        android:id="@+id/register_type"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal"
+        >
+
+        <TextView
+            android:layout_width="25dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:paddingLeft="10dp"
+            android:paddingTop="5dp"
+            android:text="账户类型"
+            android:textSize="18dp" />
+
+        <android.support.v7.widget.AppCompatRadioButton
+            android:id="@+id/register_student"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="学生"
+            android:textSize="17sp" />
+
+        <android.support.v7.widget.AppCompatRadioButton
+            android:id="@+id/register_teacher"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="教师"
+            android:textSize="17sp" />
+    </RadioGroup>
+
+    <android.support.v7.widget.AppCompatButton
+        android:id="@+id/register_create_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:background="@color/colorPrimary"
+        android:text="创建账户"
+        android:textColor="@android:color/white"
+        android:textSize="20sp" />
+
+</LinearLayout>
+
+
+</ScrollView>

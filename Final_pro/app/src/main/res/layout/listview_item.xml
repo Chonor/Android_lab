@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            >
+                <TextView
+                    android:id="@+id/item_notice_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:text="通知标题"
+                    android:textSize="22sp"
+                    android:paddingBottom="0dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:layout_marginLeft="0dp"
+                    app:layout_constraintLeft_toLeftOf="parent" />
+                <TextView
+                    android:id="@+id/item_notice_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:text="截止日期"
+                    android:layout_gravity="bottom"
+                    android:textSize="22sp"
+                    android:paddingBottom="0dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:layout_marginRight="8dp"
+                    app:layout_constraintRight_toRightOf="parent" />
+        </android.support.constraint.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/item_notice_content"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:layout_marginTop="3dp"
+            android:text="通知内容"
+            android:textSize="18sp"
+            android:maxLines="4"
+            android:ellipsize="end"
+            />
+
+
+</LinearLayout>

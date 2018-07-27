@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="cn.chonor.lab7.FileEdit"
+    android:padding="20dp"
+    android:weightSum="1">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.08"
+        android:text="File Editor"
+        android:textAlignment="center"
+        android:textColor="?attr/actionModeSplitBackground"
+        android:textSize="30sp" />
+
+    <EditText
+        android:id="@+id/file_name"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.09"
+        android:hint="File Name Here"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/file_content"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.65"
+        android:hint="File Content Here"
+        android:gravity="top"
+        android:inputType="textPersonName"
+        android:selectAllOnFocus="false"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.1"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/save"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="save" />
+
+        <Button
+            android:id="@+id/load"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="load" />
+
+        <Button
+            android:id="@+id/clear"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="clear" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/delete"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.08"
+        android:text="delete"
+        android:textColor="@android:color/holo_red_dark" />
+</LinearLayout>

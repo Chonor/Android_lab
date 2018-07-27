@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="150dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/class_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:text="人工智能"
+            android:textColor="#000000"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            />
+        <TextView
+            android:id="@+id/teacher"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="任课教师:饶阳辉"
+            android:textSize="18dp"
+            android:textColor="#000000"
+            android:layout_alignTop="@id/class_name"
+            android:layout_marginLeft="120dp"
+            android:layout_marginTop="1.5dp"
+            />
+        <TextView
+            android:id="@+id/starting_unit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="开课单位:数据科学与计算机学院"
+            android:textSize="18dp"
+            android:layout_alignLeft="@id/class_name"
+            android:layout_marginTop="45dp"
+            />
+        <TextView
+            android:id="@+id/time_and_place"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18dp"
+            android:text="时间地点:16:15~18:00 东B202"
+            android:layout_alignLeft="@id/class_name"
+            android:layout_marginTop="74dp"
+            />
+        <TextView
+            android:id="@+id/class_info"
+            android:layout_width="350dp"
+            android:layout_height="25dp"
+            android:text="课程简介：这课是坑千万别选"
+            android:textSize="18dp"
+            android:layout_alignLeft="@id/class_name"
+            android:layout_marginTop="105dp"
+            android:maxLines="1"
+            android:ellipsize="end"
+            />
+        <TextView
+            android:id="@+id/mark"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:text="√"
+            android:textSize="25dp"
+            android:textStyle="bold"
+            android:textColor="#00FF00"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="15dp"
+            android:visibility="gone"
+            />
+    </RelativeLayout>
+
+</LinearLayout>

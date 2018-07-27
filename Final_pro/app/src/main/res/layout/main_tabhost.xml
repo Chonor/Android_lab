@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    tools:context=".Main_Tabhost"
+    >
+    <TabHost xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/tabhost"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            >
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:id="@android:id/tabcontent"
+                >
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/我的课程"
+                    android:orientation="vertical"
+                    >
+                    <TableLayout
+                        android:id="@+id/first_row"
+                        android:layout_width="match_parent"
+                        android:layout_height="25dp"
+                        >
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="#F8F8FF"
+                            >
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:textSize="20dp"
+                                android:layout_marginBottom="1dp"
+                                />
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:text="周一"
+                                android:gravity="center"
+                                android:textColor="#008B8B"
+                                android:textSize="20dp"
+                                android:layout_marginLeft="1dp"
+                                />
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:text="周二"
+                                android:gravity="center"
+                                android:textColor="#008B8B"
+                                android:textSize="20dp"
+                                android:layout_marginLeft="1dp"
+                                />
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:text="周三"
+                                android:gravity="center"
+                                android:textColor="#008B8B"
+                                android:textSize="20dp"
+                                android:layout_marginLeft="1dp"
+                                />
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:text="周四"
+                                android:gravity="center"
+                                android:textColor="#008B8B"
+                                android:textSize="20dp"
+                                android:layout_marginLeft="1dp"
+                                />
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:text="周五"
+                                android:gravity="center"
+                                android:textColor="#008B8B"
+                                android:textSize="20dp"
+                                android:layout_marginLeft="1dp"
+                                />
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:text="周六"
+                                android:gravity="center"
+                                android:textColor="#008B8B"
+                                android:textSize="20dp"
+                                android:layout_marginLeft="1dp"
+                                />
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:text="周日"
+                                android:gravity="center"
+                                android:textColor="#008B8B"
+                                android:textSize="20dp"
+                                android:layout_marginLeft="1dp"
+                                />
+
+                        </TableRow>
+                    </TableLayout>
+                    <GridLayout
+                        android:id="@+id/grid"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:columnCount="8"
+                        android:orientation="horizontal">
+                        <TextView android:text="123" />
+                        <TextView android:text="123" />
+                        <TextView android:layout_marginLeft="2dp" android:text="123" />
+                        <TextView android:layout_marginLeft="2dp" android:text="123" />
+                        <TextView android:layout_marginLeft="2dp" android:text="123" />
+                        <TextView android:layout_marginLeft="2dp" android:text="123" />
+                        <TextView android:layout_marginLeft="2dp" android:text="123" />
+                        <TextView android:layout_marginLeft="2dp" android:text="123" />
+                        <TextView android:text="123" />
+                        <TextView android:text="123" />
+                        <TextView android:layout_marginLeft="2dp" android:text="123" />
+                        <TextView android:layout_marginLeft="2dp" android:text="123" />
+                        <TextView android:layout_marginLeft="2dp" android:text="123" />
+                        <TextView android:layout_marginLeft="2dp" android:text="123" />
+                        <TextView android:layout_marginLeft="2dp" android:text="123" />
+                        <TextView android:layout_marginLeft="2dp" android:text="123" />
+                        <TextView android:text="123" />
+                        <TextView android:text="123" />
+                        <TextView android:layout_marginLeft="2dp" android:text="123" />
+                        <TextView android:layout_marginLeft="2dp" android:text="123" />
+                        <TextView android:layout_marginLeft="2dp" android:text="123" />
+                        <TextView android:layout_marginLeft="2dp" android:text="123" />
+                        <TextView android:layout_marginLeft="2dp" android:text="123" />
+                        <TextView android:layout_marginLeft="2dp" android:text="123" />
+                        <TextView android:text="123" />
+                        <TextView android:text="123" />
+                        <TextView android:layout_marginLeft="2dp" android:text="123" />
+                        <TextView android:layout_marginLeft="2dp" android:text="123" />
+                        <TextView android:layout_marginLeft="2dp" android:text="123" />
+                        <TextView android:layout_marginLeft="2dp" android:text="123" />
+                        <TextView android:layout_marginLeft="2dp" android:text="123" />
+                        <TextView android:layout_marginLeft="2dp" android:text="123" />
+                        <TextView android:text="123" />
+                        <TextView android:text="123" />
+                        <TextView android:layout_marginLeft="2dp" android:text="123" />
+                        <TextView android:layout_marginLeft="2dp" android:text="123" />
+                        <TextView android:layout_marginLeft="2dp" android:text="123" />
+                        <TextView android:layout_marginLeft="2dp" android:text="123" />
+                        <TextView android:layout_marginLeft="2dp" android:text="123" />
+                        <TextView android:layout_marginLeft="2dp" android:text="123" />
+
+
+                    </GridLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/今日课程"
+                    android:orientation="vertical"
+                    >
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/today_class"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"></android.support.v7.widget.RecyclerView>
+                    <TextView
+                        android:id="@+id/no_login_hint"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="请登录后查看"
+                        android:textSize="20dp"
+                        android:textColor="#000000"
+                        android:gravity="center"
+                        android:visibility="gone"
+                        />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/课程列表"
+                    android:orientation="vertical">
+                    <SearchView
+                        android:id="@+id/class_list_searchview"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:queryHint="请输入课程名称"
+                        ></SearchView>
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/class_list_recycler_view"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"></android.support.v7.widget.RecyclerView>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/下课聊"
+                    android:orientation="vertical">
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/chat_view"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"></android.support.v7.widget.RecyclerView>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+                        <android.support.design.widget.FloatingActionButton
+                            android:id="@+id/add_new_chat"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:backgroundTint="#FFFFFF"
+                            android:layout_alignParentRight="true"
+                            android:layout_alignParentBottom="true"
+                            android:layout_marginRight="20dp"
+                            android:layout_marginBottom="20dp"
+                            android:src="@mipmap/add"
+                            />
+                    </RelativeLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/我"
+                    android:orientation="vertical">
+                    <ImageView
+                        android:id="@+id/avatar"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:src="@mipmap/no_login"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="20dp"
+                        />
+                    <TextView
+                        android:id="@+id/user_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="张三"
+                        android:textColor="#000000"
+                        android:layout_gravity="center_horizontal"
+                        android:textSize="20dp"
+                        android:layout_marginTop="15dp"
+                        />
+                    <Button
+                        android:id="@+id/my_class_list"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="我的课程列表"
+                        android:background="@drawable/button_bg"
+                        android:layout_marginTop="20dp"
+                        android:layout_gravity="center_horizontal"
+                        />
+                    <Button
+                        android:id="@+id/edit_my_info"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="编辑我的信息"
+                        android:background="@drawable/button_bg"
+                        android:layout_marginTop="20dp"
+                        android:layout_gravity="center_horizontal"
+                        />
+                    <Button
+                        android:id="@+id/view_my_notice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="查看我的通知"
+                        android:background="@drawable/button_bg"
+                        android:layout_marginTop="20dp"
+                        android:layout_gravity="center_horizontal"
+                        />
+                    <Button
+                        android:id="@+id/system_setting"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="系统设置"
+                        android:background="@drawable/button_bg"
+                        android:layout_marginTop="20dp"
+                        android:layout_gravity="center_horizontal"
+                        />
+                    <Button
+                        android:id="@+id/sign_out"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="退出登录"
+                        android:background="@drawable/button_bg"
+                        android:layout_marginTop="50dp"
+                        android:layout_gravity="center_horizontal"
+                        />
+                </LinearLayout>
+
+            </FrameLayout>
+
+            <TabWidget
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@android:id/tabs"
+                ></TabWidget>
+        </LinearLayout>
+    </TabHost>
+
+    </LinearLayout>
