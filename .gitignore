@@ -2,5 +2,5 @@
 *.docx
 *.rar
 *.zip
-/other
+other/
 
